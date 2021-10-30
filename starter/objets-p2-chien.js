@@ -10,7 +10,21 @@ Ecris un programme qui :
 	(où … est le nom du chien et … utilise la méthode aboie du chien pour le faire aboyer)
 */
 
-  
+let Dog = {
+    name: "Tobby",
+    breed: "Border Collie",
+    color: "bleu merle tricolore",
+    grogner() {
+        return `${this.name} est un ${this.breed} de couleur ${this.color}`;
+    },
+    aboyer() {
+        return "Wah ! Wah !";
+    }
+}
+
+console.log(Dog.grogner());
+console.log(`Tiens, un chat ! ${Dog.name} aboie : ${Dog.aboyer()}`);
+
   
 
 

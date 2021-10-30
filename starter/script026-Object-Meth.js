@@ -4,32 +4,41 @@
 
 /* Une MÉTHODE est une fonction associée à un objet */
 
-const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25
-};
+// const aurora = {
+//   nom: "Aurora",
+//   sante: 150,
+//   force: 25
+// };
 
 // Affiche "… a … points de vie et … en force"
 
+// console.log(`${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`);
 
 // Crée une fonction décrire qui prend personnage en paramètre et renvoie la description du personnage
 
-
+// function decrire(personnage) {
+//     return `${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`;
+// };
 
 
 // Utilise cette fonction pour afficher la description d'Aurora
 
+// console.log(decrire(aurora));
 
 // Ajoute à présent cette fonction à l'intérieur de l'objet aurora
 // => félicitations, tu viens d'ajouter une **méthode** à l'objet Aurora !
+
 const aurora = {
-  nom: "Aurora",
-  sante: 150,
-  force: 25,
-  // renvoie la description du personnage
-  // écris ton code ici
+    nom: "Aurora",
+    sante: 150,
+    force: 25,
+    decrire() {
+    return `${aurora.nom} a ${aurora.sante} points de vie et ${aurora.force} en force`;
+    },
 };
+
+console.log(aurora.decrire());
+
 /*
 Un nouveau mot est apparu : le mot-clé 'this'.
 **`this`** représente l'objet courant, l'objet auquel la méthode appartient.
@@ -52,7 +61,7 @@ var john = {
     calcAge: function() {
         return this.age = 2018 - this.birthYear;
     }
-};
+}
 console.log(john);
 console.log(john.calcAge());
 
@@ -65,7 +74,15 @@ EXERCICE 2 :
 - Utilise cette méthode pour afficher sa surface dans la console
 */ 
 
+let rectangle = {
+    longueur: 5,
+    largeur: 3,
+    surface() {
+        return this.longueur*this.largeur;
+    }
+}
 
+console.log(rectangle.surface());
 
 
 

@@ -21,8 +21,40 @@ Implémente un calculateur de pourboire en utilisant les objets et les boucles.
     2°) un tableua qui contient les montants finaux payés (facture + pourboire).
 AIDE : Commence avec deux tableaux vides en tant que propriétés 
         et remplis-les dans la boucle
+*/
+
+let aBills = [];
+let aTips = [];
+
+let facture = {
+    montant: [124, 48, 268, 180, 42],
+    calculer() {
+        let iTip;
+        for (let i = 0; i < this.montant.length; i++) {
+            if (this.montant[i] <= 50) {
+                iTip = (this.montant[i]/100)*20;
+                aBills.push(iTip);
+                aTips.push(this.montant[i]+iTip);
+            } else if (this.montant[i] > 50 && this.montant[i] <= 200) {
+                iTip = (this.montant[i]/100)*15;
+                aBills.push(iTip);
+                aTips.push(this.montant[i]+iTip);
+            } else if (this.montant[i] > 200) {
+                iTip = (this.montant[i]/100)*10;
+                aBills.push(iTip);
+                aTips.push(this.montant[i]+iTip);
+            }
+        }
+    }
+}
+
+facture.calculer();
 
 
+console.table(aBills);
+console.table(aTips);
+
+/*
 BONUS (EXTRA) APRÈS AVOIR FINI :
 
 La famille de Mark est aussi partie en vacances, et est allée dans 4 restaurants differents.
@@ -41,3 +73,4 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 
 BONNE CHANCE 😀
 */
+
