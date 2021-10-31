@@ -50,3 +50,7 @@ EXERCICE 3 :
 Parcours le mot "Bonjour" pour afficher séparément chacune de ses lettres
 */
 
+const sString = "Bonjour";
+const Splits = sString.split("");
+
+console.log(Splits);

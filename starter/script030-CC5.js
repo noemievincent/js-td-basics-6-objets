@@ -23,26 +23,26 @@ AIDE : Commence avec deux tableaux vides en tant que propriétés
         et remplis-les dans la boucle
 */
 
-let aBills = [];
-let aTips = [];
+let aBillsJ = [];
+let aTipsJ = [];
 
 let facture = {
     montant: [124, 48, 268, 180, 42],
     calculer() {
-        let iTip;
+        let iTipJ = 0;
         for (let i = 0; i < this.montant.length; i++) {
             if (this.montant[i] <= 50) {
-                iTip = (this.montant[i]/100)*20;
-                aBills.push(iTip);
-                aTips.push(this.montant[i]+iTip);
+                iTipJ = (this.montant[i]/100)*20;
+                aBillsJ.push(iTipJ);
+                aTipsJ.push(this.montant[i]+iTipJ);
             } else if (this.montant[i] > 50 && this.montant[i] <= 200) {
-                iTip = (this.montant[i]/100)*15;
-                aBills.push(iTip);
-                aTips.push(this.montant[i]+iTip);
+                iTipJ = (this.montant[i]/100)*15;
+                aBillsJ.push(iTipJ);
+                aTipsJ.push(this.montant[i]+iTipJ);
             } else if (this.montant[i] > 200) {
-                iTip = (this.montant[i]/100)*10;
-                aBills.push(iTip);
-                aTips.push(this.montant[i]+iTip);
+                iTipJ = (this.montant[i]/100)*10;
+                aBillsJ.push(iTipJ);
+                aTipsJ.push(this.montant[i]+iTipJ);
             }
         }
     }
@@ -50,9 +50,9 @@ let facture = {
 
 facture.calculer();
 
-
-console.table(aBills);
-console.table(aTips);
+console.log("famille de John :")
+console.table(aBillsJ); //pourboires
+console.table(aTipsJ); //pourboires + factures
 
 /*
 BONUS (EXTRA) APRÈS AVOIR FINI :
@@ -74,3 +74,57 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 BONNE CHANCE 😀
 */
 
+let aFactureM = [77, 375, 110, 45];
+let aBillsM = [];
+let aTipsM = [];
+
+function calculerM() {
+    let iTipM = 0;
+    for (i = 0; i < aFactureM.length; i++){
+        if (aFactureM[i] <= 100) {
+            iTipM = (aFactureM[i]/100)*20;
+            aBillsM.push(iTipM);
+            aTipsM.push(aFactureM[i]+iTipM);
+        } else if (aFactureM[i] > 100 && aFactureM[i] <= 300){
+            iTipM = (aFactureM[i]/100)*15;
+            aBillsM.push(iTipM);
+            aTipsM.push(aFactureM[i]+iTipM);
+        } else if (aFactureM[i] >= 300){
+            iTipM = (aFactureM[i]/100)*10;
+            aBillsM.push(iTipM);
+            aTipsM.push(aFactureM[i]+iTipM);
+        }
+    }
+}
+
+calculerM();
+console.log("famille de Mark :");
+console.table(aBillsM);
+console.table(aTipsM);
+
+
+//moyenne des pourboires
+
+// moyenne John
+let iSumJ = 0;
+aBillsJ.forEach(element => {
+    iSumJ +=element;
+});
+// iSumJ /= 5;
+iSumJ /= (aBillsJ.length); //18.08
+
+
+//moyenne Mark
+let iSumM = 0;
+aBillsM.forEach(element => {
+    iSumM +=element;
+});
+// iSumM /= 4;
+iSumM /= (aBillsM.length); //19.6
+
+
+if (iSumJ > iSumM) {
+    console.log("John a payé le pourboire le plus élevé en moyenne");
+} else {
+    console.log("Mark a payé le pourboire le plus élevé en moyenne");
+}
