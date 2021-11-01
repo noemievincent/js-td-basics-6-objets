@@ -74,6 +74,8 @@ du tableau (c'est comme cela qu'on calcule une moyenne).
 BONNE CHANCE 😀
 */
 
+//BONUS
+
 let aFactureM = [77, 375, 110, 45];
 let aBillsM = [];
 let aTipsM = [];

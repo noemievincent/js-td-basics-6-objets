@@ -17,7 +17,7 @@ let Compte = {
     titulaire: "Alex",
     solde: 0,
     crediter(montant) {
-        montant+solde;
+        Compte.solde += montant;
     },
     decrire() {
         return `Le compte appartient à ${this.titulaire} et le solde est de ${this.solde}`;
@@ -25,6 +25,6 @@ let Compte = {
 };
 
 console.log(Compte.decrire());
-Compte.solde += 250;
-Compte.solde -= 80;
+Compte.crediter(250);
+Compte.crediter(-80);
 console.log(Compte.decrire());
